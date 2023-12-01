@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/c2cf7e364a.js" crossorigin="anonymous"></script>
+    <title>Navbar</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <a class="logo" href="/">Leonardo da Vince</a>
+        <div class="mobile-menu">
+          <div class="line1"></div>
+          <div class="line2"></div>
+          <div class="line3"></div>
+        </div>
+        <ul class="nav-list">
+            <li><a href="inicio" href="../index.html">📚︎ 𝐇𝐨𝐦𝐞</a></li>
+            <li><a href="/pages/biografia.html">📚︎ 𝐁𝐢𝐨𝐠𝐫𝐚𝐟𝐢𝐚</a></li>
+            <li><a href="/pages/obras.html">📚︎ 𝐎𝐛𝐫𝐚𝐬</a></li>
+            <li><a href="/pages/galeria.html">📚︎ 𝐆𝐚𝐥𝐞𝐫𝐢𝐚</a></li>
+        </ul>
+      </nav>
+    </header>
+    <br>
+    <br>
+    <br>
+
+    <header>
+        <h1> 𝐆𝐚𝐥𝐞𝐫𝐢𝐚</h1>
+    </header>
+    <br>
+    <br>
+    <main>
+        <div class="galeria">
+           
+            <a href="/pages/img1.webp" class="gallery-items">
+                <img src="/pages/img1.webp" ="Chick Hicks">
+            </a>
+            <a href="/pages/adoração.webp" class="gallery-items">
+                <img src="/pages/adoração.webp" alt="Doctor Hudson">
+            </a>
+            <a href="/pages/img3.webp" class="gallery-items">
+                <img src="/pages/img3.webp" alt="Fillmore">
+            </a>
+            <a href="/pages/img3.webp" class="gallery-items">
+                <img src="/pages/img4.webp" alt="Flo">
+            </a>
+            <a href="/pages/monaliza.png" class="gallery-items">
+                <img src="/pages/monaliza.png" alt="Guido">
+            </a>
+            <a href="/imagem/img2.webp" class="gallery-items">
+                <img src="/pages/dama com ormonio.webp" alt="lightning-mcqueen">
+            </a>
+            <a href="/pages/obra2.jpeg" class="gallery-items">
+                <img src="/pages/obra2.jpeg" alt="Lizzie">
+            </a>
+            <a href="/imagem/img4.webp" class="gallery-items">
+                <img src="/pages/img8.webp" alt="Luigi">
+            </a>
+           
+        </div>        
+    </main>
+    
+
+</body>
+</html>
+
+
+<style>
+    * {
+margin: 0;
+padding: 0;
+}
+
+body{
+background: linear-gradient(68.15deg, #201e1e 16.62%, #cd9589 85.61%);
+}
+
+a {
+color: #fff;
+text-decoration: none;
+transition: 0.3s;
+}
+
+a:hover {
+opacity: 0.7;
+}
+
+.logo {
+font-size: 24px;
+text-transform: uppercase;
+letter-spacing: 4px;
+}
+
+nav {
+display: flex;
+justify-content: space-around;
+align-items: center;
+font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+
+height: 8vh;
+}
+
+main {
+background: url("bg.jpg") no-repeat center center;
+background-size: cover;
+height: 92vh;
+}
+
+.nav-list {
+list-style: none;
+display: flex;
+}
+
+.nav-list li {
+letter-spacing: 3px;
+margin-left: 32px;
+}
+
+.mobile-menu {
+display: none;
+cursor: pointer;
+}
+
+.mobile-menu div {
+width: 32px;
+height: 2px;
+background: #fff;
+margin: 8px;
+transition: 0.3s;
+}
+
+@media (max-width: 999px) {
+body {
+overflow-x: hidden;
+}
+.nav-list {
+position: absolute;
+top: 8vh;
+right: 0;
+width: 50vw;
+height: 92vh;
+background: #010101;
+flex-direction: column;
+align-items: center;
+justify-content: space-around;
+transform: translateX(100%);
+transition: transform 0.3s ease-in;
+}
+.nav-list li {
+margin-left: 0;
+opacity: 0;
+}
+.mobile-menu {
+display: block;
+}
+}
+
+.nav-list.active {
+transform: translateX(0);
+}
+
+@keyframes navLinkFade {
+from {
+opacity: 0;
+transform: translateX(50px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+
+.mobile-menu.active .line1 {
+transform: rotate(-45deg) translate(-8px, 8px);
+}
+
+.mobile-menu.active .line2 {
+opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+transform: rotate(45deg) translate(-5px, -7px);
+}
+
+
+.galeria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 2vw;
+    padding: 0 2vw;
+}
+.gallery-items{
+    width: 320px;
+    height: 340px;
+    border: 10px solid #FFF;
+    box-shadow: 5px 5px 5px #0006;
+    flex-grow: 1;
+    transition: transform .5s linear;
+}
+.gallery-items img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gallery-items:hover{
+    transform: scale(1.3);
+}
+
+h1{
+    text-align: center;
+}
+
+
+
+</style>
+
+<script>
+class MobileNavbar {
+constructor(mobileMenu, navList, navLinks) {
+this.mobileMenu = document.querySelector(mobileMenu);
+this.navList = document.querySelector(navList);
+this.navLinks = document.querySelectorAll(navLinks);
+this.activeClass = "active";
+
+this.handleClick = this.handleClick.bind(this);
+}
+
+animateLinks() {
+this.navLinks.forEach((link, index) => {
+link.style.animation
+ ? (link.style.animation = "")
+ : (link.style.animation = `navLinkFade 0.5s ease forwards ${
+     index / 7 + 0.3
+   }s`);
+});
+}
+
+handleClick() {
+this.navList.classList.toggle(this.activeClass);
+this.mobileMenu.classList.toggle(this.activeClass);
+this.animateLinks();
+}
+
+addClickEvent() {
+this.mobileMenu.addEventListener("click", this.handleClick);
+}
+
+init() {
+if (this.mobileMenu) {
+this.addClickEvent();
+}
+return this;
+}
+}
+
+const mobileNavbar = new MobileNavbar(
+".mobile-menu",
+".nav-list",
+".nav-list li",
+);
+mobileNavbar.init();
+</script>
